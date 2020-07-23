@@ -17,6 +17,50 @@
 //       '### '
 //       '####'
 
-function steps(n) {}
+function steps(n, row = 0, stair = '') {
+  if (row === n) {
+    return;
+  }
+
+  if (n === stair.length) {
+    console.log(stair);
+    return steps(n, row + 1);
+  }
+
+  // if (stair.length <= row) {
+  //   stair += '#';
+  // } else {
+  //   stair += ' ';
+  // }
+  // OR
+  const add = stair.length <= row ? '#' : ' ';
+
+  steps(n, row, stair + add);
+}
+
+steps(5);
+
+// for (let row = 0; row < n; row++) {
+//   let stair = '';
+
+//   for (let column = 0; column < n; column++) {
+//     if (column <= row) {
+//       stair += '#';
+//     } else {
+//       stair += ' ';
+//     }
+//   }
+
+//   console.log(stair);
+// }
+
+// Recursion Exercise
+// function printNum(n, dec = 2) {
+//   if (n >= 0) {
+//     console.log(n);
+//   }
+//   printNum(n - dec);
+// }
+// printNum(5);
 
 module.exports = steps;
