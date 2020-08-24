@@ -8,6 +8,8 @@
 //     q.add(1);
 //     q.remove(); // returns 1;
 
+[0];
+
 class Queue {
   constructor() {
     this.data = [];
