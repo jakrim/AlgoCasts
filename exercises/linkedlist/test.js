@@ -1,4 +1,5 @@
 const L = require('./index');
+const { LinkedList } = require('./index');
 const List = L.LinkedList;
 const Node = L.Node;
 
@@ -10,7 +11,7 @@ test('Node is a class', () => {
   expect(typeof Node.prototype.constructor).toEqual('function');
 });
 
-describe.skip('A Node', () => {
+describe('A Node', () => {
   test('has properties "data" and "next"', () => {
     const node = new Node('a', 'b');
     expect(node.data).toEqual('a');
@@ -18,7 +19,14 @@ describe.skip('A Node', () => {
   });
 });
 
-describe.skip('Insert First', () => {
+describe('Contructor for linkedList', () => {
+  test('Has property "head" equal to null', () => {
+    const list = new LinkedList();
+    expect(list.head).toEqual(null);
+  });
+});
+
+describe('Insert First', () => {
   test('appends a node to the start of the list', () => {
     const l = new List();
     l.insertFirst(1);
@@ -28,7 +36,7 @@ describe.skip('Insert First', () => {
   });
 });
 
-describe.skip('Size', () => {
+describe('Size', () => {
   test('returns the number of items in the linked list', () => {
     const l = new List();
     expect(l.size()).toEqual(0);
@@ -281,7 +289,7 @@ describe.skip('ForEach', () => {
     l.insertLast(3);
     l.insertLast(4);
 
-    l.forEach(node => {
+    l.forEach((node) => {
       node.data += 10;
     });
 
