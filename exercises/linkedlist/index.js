@@ -73,6 +73,21 @@ class LinkedList {
     }
     previous.next = null;
   }
+
+  insertLast(data) {
+    let node = new Node(data);
+    if (!this.head) this.head = node;
+
+    this.getLast().next = node;
+
+    //     His solution
+    // let last = this.getLast();
+    // if (last) {
+    //   last.next = new Node(data);
+    // } else {
+    //   this.head = new Node(data);
+    // }
+  }
 }
 
 const list = new LinkedList();
